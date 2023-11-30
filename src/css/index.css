@@ -1,3 +1,4 @@
+<<<<<<< HEAD
      /* Estilo básico para resaltar los elementos al pasar el ratón sobre ellos */
      body{
         text-align: center;
@@ -13,3 +14,15 @@
         background-color: aqua;
         transition: 0.5s;
     }
+=======
+header {
+    background-color: #160FF2 ;
+    text-align: left;
+    padding-left: 5%;
+    width: 125%;
+    height: 8%;
+    position: fixed;
+    top:0;
+    left: 0%;
+}
+>>>>>>> 799616ff4397cf84865d29046babe8192f62f01b
