@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Elemento de Array al Clic</title>
+   <link rel="stylesheet" href="../css/index.css">
+   
 </head>
+
 <body>
-    <h1>Hola Coders...</h1>
+
+<form id="miFormulario">
+    <label for="elemento">Elemento:</label>
+    <input type="text" id="elemento" name="elemento" required>
+    <button type="button" onclick="agregarElemento()">Agregar</button>
+</form>
+
+
+<h2>Seleccionados</h2>
+<!-- Contenedor para mostrar los elementos del array -->
+<div id="contenedorArray"></div>
+
+<script  src="../js/index.js"></script>
 </body>
 </html>
