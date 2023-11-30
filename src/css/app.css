@@ -1,0 +1,15 @@
+/* Estilo básico para resaltar los elementos al pasar el ratón sobre ellos */
+body{
+    text-align: center;
+}
+.elemento {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+.elemento:hover{
+    background-color: aqua;
+    transition: 0.5s;
+}
