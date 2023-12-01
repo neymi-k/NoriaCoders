@@ -1,33 +1,32 @@
 :root{
     --font-family: 'Jolly Lodger', cursive;
-    --main-color: #F0F08F;
 }
 body{
     width: 100%;
     background-image: url(../images/fondo.png);
     font-family: var(--font-family);
-    color: var(--main-color);
+    color: #F0F08F;;
     margin: 0;
 }
 
-h2{
+h1{
     text-align: center;
     font-size: 66px;
     font-weight: 600;
     letter-spacing: 7.3px;  
 }
+
  
-.section-1{
+.text-introduction{
     font-size: 30px;
     text-align: center;
 
- 
 }
 p{
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.section-2{
+.start-game{
     text-align: center;
     margin-top: 50px;
     display: flex;
@@ -38,7 +37,6 @@ label{
     font-size: 22px;
 }
 #user{
-    /*width: 6em; quito esto ypongo los dos de abaja*/
     width: 100%;
     max-width: 200px;
     height:1.5em;
