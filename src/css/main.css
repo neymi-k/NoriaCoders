@@ -1,0 +1,101 @@
+
+header {
+  background-color: #160FF2 ;
+  text-align: left;
+  padding-left: 5%;
+  width: 125%;
+  height: 8%;
+  position: fixed;
+  top:0;
+  left: 0%;
+}
+
+
+/*body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}*/
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  margin-left: 15rem;
+  height: 20rem;
+  margin-top: 3rem;
+  margin-right: 2.5rem;
+  width: 40rem;
+}
+.partone .elemento {
+  background-color:#160FF2;
+}
+.parttwo .elemento {
+  background-color:#B856A4;
+}
+.partthree .elemento {
+  background-color:#494078;
+}
+.partfour .elemento {
+  background-color:#673CE1;
+}
+.partfive .elemento {
+  background-color:#8D3CC0;
+}
+
+.partone {
+  width: 7.5rem;
+  height: 20rem;
+ 
+}
+.parttwo, .partthree, .partfour, .partfive {
+  width: 7.5rem;
+  height: 20rem;
+  margin-top: 6.25rem;
+  
+}
+
+
+.elemento {
+  width: 3rem;
+  height: 2rem;
+  margin: 0.3rem;
+  border-radius: 180%;
+  font-size:12px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 1rem;
+  color: azure;
+  background-color: #672494;
+  position: relative;
+  cursor: pointer;
+}
+
+#elemento1 { top: 20px; left: 20px; }
+#elemento2 { top: 10px; left: 50px; }
+#elemento3 { top: 50px; left: 100px; }
+#elemento4 { top: 100px; left: 50px; }
+#elemento5 { top: 50px; left: 25px; }
+#elemento6 { top: 3px; left: 100px; }
+#elemento7 { top: 150px; left: 50px; }
+#elemento8 { top: 50px; left: 25px;  }
+#elemento9 { top: 25px; left: 30px;  }
+#elemento10 { top: 20px; left:10px; }
+#elemento11 { top: 30px; ;left: 25px;}
+#elemento12 { top: 40px; left:40px;}
+#elemento13 { top: 50px; left:60px;}
+#elemento14 { top: 60px; left:100px; }
+#elemento15 { top: 70px; left: 150px;}
+#elemento16 { top: 80px; left:10px; }
+#elemento17 { top: 90px; left: 25px;}
+#elemento18 { top: 20px; left:40px;}
+#elemento19 { top: 20px; left:60px;}
+#elemento20 { top: 20px; left:100px; }
+#elemento21 { top: 10px; left: 10px;}
+#elemento22 { top: 10px; left:10px; }
+#elemento23 { top: 20px; left: 25px;}
+#elemento24 { top: 20px; left:40px;}
+#elemento25 { top: 20px; left:60px;}
