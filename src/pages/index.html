@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Elemento de Array al Clic</title>
-   <link rel="stylesheet" href="../css/index.css">
+   <link rel="stylesheet" href="../css/app.css">
    
 </head>
 
 <body>
 
+<!--Este es el boton para generar lo aleatori0-->
+<button id="botonSeleccionar" onclick="seleccionarElemento()">Girar Elemento Array</button>
+
+
 <form id="miFormulario">
-    <label for="elemento">Elemento:</label>
-    <input type="text" id="elemento" name="elemento" required>
-    <button type="button" onclick="agregarElemento()">Agregar</button>
+    <label for="nuevoElemento">Elemento:</label>
+    <input type="text" id="nuevoElemento" name="nuevoElemento" required>
+    <button type="button" onclick="agregarElemento(),mostrarArray();">Agregar nUEVO eLEMENTO</button>
 </form>
 
 
-<h2>Seleccionados</h2>
+<h2 style="margin: 5px; font-size: 20px;">Coders en Lista</h2>
 <!-- Contenedor para mostrar los elementos del array -->
 <div id="contenedorArray"></div>
 
-<script  src="../js/index.js"></script>
+<h2 style="margin: 5px; font-size: 20px;">Seleccionados:</h2>
+<div id="contenedorArrayAleatorio2"></div>
+
+<script  src="../js/app.js"></script>
 </body>
 </html>

@@ -13,3 +13,18 @@
         background-color: aqua;
         transition: 0.5s;
     }
+
+    /*estilos de la otra cajita la de la prueba aleatoria*/
+    .elemento2 {
+        cursor: pointer;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        display: inline-block;
+    }
+
+    /*botoncito de girar*/
+    #botonSeleccionar{
+        margin-bottom: 5px;
+    }
+    
