@@ -13,12 +13,14 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    /*overflow: hidden;*/
+    overflow: hidden;
     margin-left: 11.5rem;
     height: 10rem;
     margin-top: 3rem;
     margin-right: 1.25rem;
     width: auto;
+    position: relative;
+    z-index: 99;
   }
   #elemento1, #elemento6, #elemento11, #elemento16, #elemento21 {
     background-color: #160FF2;
