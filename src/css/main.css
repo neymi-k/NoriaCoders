@@ -21,43 +21,31 @@ header {
 }*/
 
 .container {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  margin-left: 15rem;
-  height: 20rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /*overflow: hidden;*/
+  margin-left: 11.5rem;
+  height: 10rem;
   margin-top: 3rem;
-  margin-right: 2.5rem;
-  width: 40rem;
+  margin-right: 1.25rem;
+  width: auto;
 }
-.partone .elemento {
-  background-color:#160FF2;
+#elemento1, #elemento6, #elemento11, #elemento16, #elemento21 {
+  background-color: #160FF2;
 }
-.parttwo .elemento {
+#elemento2, #elemento7, #elemento12, #elemento17, #elemento22 {
   background-color:#B856A4;
 }
-.partthree .elemento {
+#elemento3, #elemento8, #elemento13, #elemento18, #elemento23 {
   background-color:#494078;
 }
-.partfour .elemento {
+#elemento4, #elemento9, #elemento14, #elemento19, #elemento24 {
   background-color:#673CE1;
 }
-.partfive .elemento {
+#elemento5, #elemento10, #elemento15, #elemento20, #elemento25 {
   background-color:#8D3CC0;
 }
-
-.partone {
-  width: 7.5rem;
-  height: 20rem;
- 
-}
-.parttwo, .partthree, .partfour, .partfive {
-  width: 7.5rem;
-  height: 20rem;
-  margin-top: 6.25rem;
-  
-}
-
 
 .elemento {
   width: 3rem;
