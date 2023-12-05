@@ -5,7 +5,10 @@
 
     var elementosSelecanterior = []; /* Esta variable global me va a servir para ir llevando la cuenta del indice seleccionado, es decir este llevara el registro de los coders ya seleccioandos para que no se repitan */
 
-
+    document.getElementById('reloadButton').addEventListener('click', function() {
+        // Recargar la página
+        location.reload();
+    });
 
     /*funcion para agregar un nuevo elemento al array inicial */
     /******************************************************** */
