@@ -18,15 +18,25 @@
                 estelar para nuestro próximo proyecto.</p> 
                 <p>¡Que la fuerza del código esté contigo!</p>
             </article>
-            <article class="start-game">
-                <label for="user">Nombre Coder</label>
                 <div>
-                    <input id="user" type="text" maxlength="12" placeholder="Escribe tu nombre" name="user" required>
+                    <audio id="startbtn">
+                        <source src="../sounds/start.mp3" type="audio/mp3">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                
+                    <script>
+                        let startbtn = document.getElementById('startbtn');
+                
+                        function playAudio() {
+                            startbtn.play();
+                        }
+                        
+                    </script>
+                
+                    <button id="startButton" onclick="playAudio()">Comenzar</button>
+                  <!--  <button id="btn-start">Comencemos</button> -->
                 </div>
-                <div>
-                    <button id="btn-start">Comencemos</button>
-                </div>
-            </article>
+           
         </section>
     </main>
 
