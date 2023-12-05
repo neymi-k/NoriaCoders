@@ -1,14 +1,15 @@
 
- /*ARRAY BASICO DE DONDE MANIPULAREMOS SUS ELEMENTOS*/
+  /*ARRAY BASICO DE DONDE MANIPULAREMOS SUS ELEMENTOS*/
     /*Varibles Globales */
     let miArray = ["JANDER", "ALICIA", "NEYMI", "MARCELA", "ALVARO", "JOACO", "ALBERTO", "ROXANA", "ELENA", "ALFREDO", "VICTOR", "ALBA", "HANNAH"];
 
     var elementosSelecanterior = []; /* Esta variable global me va a servir para ir llevando la cuenta del indice seleccionado, es decir este llevara el registro de los coders ya seleccioandos para que no se repitan */
 
     document.getElementById('reloadButton').addEventListener('click', function() {
-        // Recargar la página
-        location.reload();
+            // Recargar la página
+            location.reload();
     });
+
 
     /*funcion para agregar un nuevo elemento al array inicial */
     /******************************************************** */
@@ -30,7 +31,6 @@
     }
     /***********************************************************/
     /******************************************************** */
-
 
 
     // Función para mostrar los elementos del array
@@ -60,24 +60,17 @@
     /******************************************************** */
 
 
-
     /**FUNCION SENCILLA PARA SELECCIONAR EL ELEMENTO DEL ARRAY */
     /******************************************************** */
     /******************************************************** */
     function seleccionarElemento() {
 
-
-        // Obtener un índice aleatorio del array
-        // guardamos en varible el resultado de la funcion aletoria y redondeo
-
-
-        //Vamos por este bloque
         let indiceAleatorio  = Math.floor(Math.random() * miArray.length); //LISTO los escojo
 
         elementosSelecanterior.push(indiceAleatorio);                      //guado el indice en global              
         let elementoSeleccionado = miArray[indiceAleatorio];               //al guardo indice seleccionado
 
-        if ( miArray.length === 1) { alert("Cuidado, solo queda un Coder");}
+        if ( miArray.length === 1) { alert("El ultimo coder es....");}
         if ( miArray.length === 0) {   
             alert("Todos han sido Selecionados");
             console.log("todos seleccionados");
@@ -95,13 +88,10 @@
 
         /*DEebo usar este addevent listener justo despues d crear el elemento para que no cree conflicto */
         crearCajita2.addEventListener("click", function() {
-
             // Elimino ls cajita directamente
             crearCajita2.remove();
-
         }); 
 
-        
         let elementoEliminado = miArray.splice(indiceAleatorio, 1);       //elimino el indice seleccionado del array principal
 
         console.log(miArray);                //cnsola para monitorear
@@ -112,7 +102,6 @@
     }
     /******************************************************** */
     /******************************************************** */
-
 
 
     /**FUNCION ELIMINAR EL ELEMENTOS DEL ARRAY PRINCIPAL*/
