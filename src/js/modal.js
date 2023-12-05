@@ -1,4 +1,4 @@
-export default function NavBarComponent (){
+export default function Modal (){
   const modalHTML = `<div class="modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">

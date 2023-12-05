@@ -1,6 +1,6 @@
 let container = document.getElementById('container');
 
-let users = ['Alicia','Marcela', 'Neymi', 'Alvaro','Jander', 'José', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'Isaac']
+let users = ['Alicia','Marcela', 'Neymi', 'Alvaro','Jander', 'José', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'Isaac', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'Isaac', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'Isaac']
 let colors = ['#160FF2','#B856A4','#494078','#673CE1','#8D3CC0']
 
 function randomNumbers(arrObject){
@@ -18,8 +18,8 @@ function numbers_azar(arrObject){
 }
 
 export default function LoadUser() {
-  container.innerHTML = ""
-  let userHtml =''
+  container.innerHTML = ''
+  let userHtml = ''
   let color_random = numbers_azar(colors)
   users.forEach( (user,index) =>{
     userHtml += `<div class="element" style="background-color:${color_random[index]}" id="element${index}">
