@@ -1,71 +1,10 @@
 
 /*ARRAY BASICO DE DONDE MANIPULAREMOS SUS ELEMENTOS*/
 /*Varibles Globales */
-/*LOS DOS ARRAY DEBEN VAR PARA PODER SER MODIFICABLES CON LET NO FUCIONA, LET SOLO SIRVE EN BLOQUE*/
-var miArray = ["JANDER", "ALICIA", "NEYMI", "MARCELA", "ALVARO", "JOACO", "ALBERTO", "ROXANA", "ELENA", "ALFREDO", "VICTOR", "ALBA", "HANNAH"];
+let miArray = ["JANDER", "ALICIA", "NEYMI", "MARCELA", "ALVARO", "JOACO", "ALBERTO", "ROXANA", "ELENA", "ALFREDO", "VICTOR", "ALBA", "HANNAH"];
+
 var elementosSelecanterior = []; /* Esta variable global me va a servir para ir llevando la cuenta del indice seleccionado, es decir este llevara el registro de los coders ya seleccioandos para que no se repitan */
 
-/**FUNCION SENCILLA PARA SELECCIONAR EL ELEMENTO DEL ARRAY */
-/******************************************************** */
-function seleccionarElemento() {
-
-        /*Utilizo la variable global como local en la función*/
-        /*A esto se le llama shadowing, o hacer sombra */
-        let elementosSelecanterior = this.elementosSelecanterior;
-
-                //Punto de control que avisa que todos los coders fueron seleccionados
-                //si los elementos de la variable global es estrictamente igual a todos del array principal, retorna 
-                if (elementosSelecanterior.length === miArray.length) {   
-
-                        alert("Todos los elementos han sido seleccionados.");
-                        return;
-
-                }
-        
-        // Obtener un índice aleatorio del array
-        // guardamos en varible el resultado de la funcion aletoria y redondeo
-        let indiceAleatorio = Math.floor(Math.random() * miArray.length);
-
-                /*punto de control para saber si un elemento ya ha sido seleccionado */
-                if (elementosSelecanterior.includes(indiceAleatorio)) {
-
-                        // Si ya ha sido seleccionado, volver a intentar
-                        seleccionarElemento();
-
-                } 
-                else 
-                {
-
-                        // Marcar el elemento como seleccionado, y lo guardo en la variable global
-                        elementosSelecanterior.push(indiceAleatorio);
-
-                        // Obtener el elemento correspondiente al índice aleatorio
-                        let elementoSeleccionado = miArray[indiceAleatorio];
-
-                        /*Construccion de la estetica de la cajita */
-                        let crearCajita2 = document.createElement("div"); /*creo variable para guardar div creado */
-                        crearCajita2.className   = "elemento2";           /*a ese elemento creado le doy un nombre */
-                        crearCajita2.textContent = elementoSeleccionado;  /*ademas, le doy el contenido del array */
-                        let contenedordeCajitaAleatoria2 = document.getElementById("contenedorArrayAleatorio2"); /*guardo en una variable la referencia del objeto */
-                        contenedordeCajitaAleatoria2.appendChild(crearCajita2); /* */
-
-                        /*DEebo usar este addevent listener justo despues d crear el elemento para que no cree conflicto */
-                        crearCajita2.addEventListener("click", function() {
-                                // Elimino ls cajita directamente
-                                crearCajita2.remove();
-
-                                // Obtengo el numero de idice que saque con el math(), lo guardo en una variable
-                                let index = elementosSelecanterior.indexOf(indiceAleatorio);
-
-                                // y si el índice existe, eliminar el elemento del array
-                                if (index !== -1) {
-                                elementosSelecanterior.splice(index, 1);
-                                }
-
-                        });
-
-                }   
-}
 
 /*funcion para agregar un nuevo elemento al array inicial */
 /******************************************************** */
@@ -102,6 +41,55 @@ function mostrarArray() {
         });
 
 }
+
+
+  /**FUNCION SENCILLA PARA SELECCIONAR EL ELEMENTO DEL ARRAY */
+    /******************************************************** */
+    /******************************************************** */
+    function seleccionarElemento() {
+
+
+
+        // Obtener un índice aleatorio del array
+        // guardamos en varible el resultado de la funcion aletoria y redondeo
+
+
+        //Vamos por este bloque
+        let indiceAleatorio  = Math.floor(Math.random() * miArray.length); //LISTO los escojo
+
+
+
+        elementosSelecanterior.push(indiceAleatorio);                      //guado el indice en global              
+        let elementoSeleccionado = miArray[indiceAleatorio];               //al guardo indice seleccionado
+
+        alert( elementoSeleccionado + " Ha sido Seleccionado");
+
+        //construyo cajita de indice creado
+        let crearCajita2 = document.createElement("div"); /*creo variable para guardar div creado */
+        crearCajita2.className   = "elemento2";           /*a ese elemento creado le doy un nombre */
+        crearCajita2.textContent = elementoSeleccionado;  /*ademas, le doy el contenido del array */
+        let contenedordeCajitaAleatoria2 = document.getElementById("contenedorArrayAleatorio2"); /*guardo en una variable la referencia del objeto */
+        contenedordeCajitaAleatoria2.appendChild(crearCajita2); /* */
+
+
+        
+
+
+
+        let elementoEliminado = miArray.splice(indiceAleatorio, 1);       //elimino el indice seleccionado del array principal
+        console.log(miArray);                //cnsola para monitorear
+        console.log(elementosSelecanterior); //cnsola para monitorear
+
+        mostrarArray();                                                   //llamo a la funcion para que mustre el aray principal
+
+
+        
+    }
+    /******************************************************** */
+    /******************************************************** */
+
+
+
 
 // Mostrar los elementos iniciales
 mostrarArray();
