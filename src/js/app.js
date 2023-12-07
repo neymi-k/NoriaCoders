@@ -5,7 +5,7 @@
 
     var elementosSelecanterior = []; /* Esta variable global me va a servir para ir llevando la cuenta del indice seleccionado, es decir este llevara el registro de los coders ya seleccioandos para que no se repitan */
 
-    document.getElementById('reloadButton').addEventListener('click', function() {
+    document.getElementById('reload-button').addEventListener('click', function() {
             // Recargar la página
             location.reload();
     });
@@ -17,12 +17,12 @@
     function agregarElemento() {
             
             /*Obtengo el valor del imput y limpio sus espacios con el trim()*/
-            let nuevoElemento = document.getElementById("nuevoElemento").value.trim();
+            let nuevoElemento = document.getElementById("nuevo-elemento").value.trim();
     
             /*punto de control para ver si el imput no esta vacio*/
             if (nuevoElemento !== "") {
             miArray.push(nuevoElemento);                         /*agrego el nuevo elmento al array con el metodo push*/
-            document.getElementById("nuevoElemento").value = ""; /*Limpia el input, estableciendo su valor en una cadena vacía. */
+            document.getElementById("nuevo-elemento").value = ""; /*Limpia el input, estableciendo su valor en una cadena vacía. */
             alert("CODER AGREGADO");
             } else {
             alert("Debes agregar un nombre sin espacios");
@@ -38,7 +38,7 @@
     /******************************************************** */
     function mostrarArray() {
 
-        let contenedor = document.getElementById("contenedorArray");
+        let contenedor = document.getElementById("contenedor-array");
 
         // Limpiar el contenido actual
         contenedor.innerHTML = "";
@@ -70,10 +70,10 @@
         elementosSelecanterior.push(indiceAleatorio);                      //guado el indice en global              
         let elementoSeleccionado = miArray[indiceAleatorio];               //al guardo indice seleccionado
 
+        if ( miArray.length === 2) { alert("Cuidado, queda un solo Coder....");}
         if ( miArray.length === 1) { alert("El ultimo coder es....");}
         if ( miArray.length === 0) {   
             alert("Todos han sido Selecionados");
-            console.log("todos seleccionados");
             return;
         }
 
@@ -83,7 +83,7 @@
         let crearCajita2 = document.createElement("div"); /*creo variable para guardar div creado */
         crearCajita2.className   = "elemento2";           /*a ese elemento creado le doy un nombre */
         crearCajita2.textContent = elementoSeleccionado;  /*ademas, le doy el contenido del array */
-        let contenedordeCajitaAleatoria2 = document.getElementById("contenedorArrayAleatorio2"); /*guardo en una variable la referencia del objeto */
+        let contenedordeCajitaAleatoria2 = document.getElementById("contenedor-array-aleatorio2"); /*guardo en una variable la referencia del objeto */
         contenedordeCajitaAleatoria2.appendChild(crearCajita2); /* */
 
         /*DEebo usar este addevent listener justo despues d crear el elemento para que no cree conflicto */

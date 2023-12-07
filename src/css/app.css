@@ -1,5 +1,5 @@
      /* Estilo básico para resaltar los elementos al pasar el ratón sobre ellos */
-     body{
+    body{
         text-align: center;
     }
     .elemento {
@@ -28,11 +28,11 @@
         margin-bottom: 5px;
     }
 
-    #reloadButton{
+    #reload-button{
         margin-top: 5px;
     }
 
-    #miFormulario button{
+    #mi-formulario button{
         margin-top: 5px;
     }
     

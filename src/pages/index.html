@@ -10,24 +10,24 @@
 
 <body>
 
-<!--Este es el boton para generar lo aleatori0-->
-<button id="botonSeleccionar" onclick="seleccionarElemento()">Escoje al Coder</button>
+<!--Este es el boton para generar lo aleatorio-->
+<button id="boton-seleccionar" onclick="seleccionarElemento()">Escoje al Coder</button>
 
-
-<form id="miFormulario">
-    <label for="nuevoElemento">Nombre Coder:</label>
-    <input type="text" id="nuevoElemento" name="nuevoElemento" required>
+<!--formulario en donde se encuentra input-->
+<form id="mi-formulario">
+    <label for="nuevo-elemento">Nombre Coder:</label>
+    <input type="text" id="nuevo-elemento" name="nuevo-elemento" required>
     <button type="button" onclick="agregarElemento(),mostrarArray();">Agregar Nuevo Coder</button>
 </form>
 
-<button id="reloadButton">Recargar Lista</button>
+<button id="reload-button">Recargar Lista</button>
 
 <h2 style="margin: 5px; font-size: 20px;">Coders en Lista</h2>
 <!-- Contenedor para mostrar los elementos del array -->
-<div id="contenedorArray"></div>
+<div id="contenedor-array"></div>
 
 <h2 style="margin: 5px; font-size: 20px;">Seleccionados:</h2>
-<div id="contenedorArrayAleatorio2"></div>
+<div id="contenedor-array-aleatorio2"></div>
 
 <script  src="../js/app.js"></script>
 </body>
