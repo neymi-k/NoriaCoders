@@ -1,4 +1,4 @@
-import LoadUser, { NewLoad } from "./load.js";
+import LoadUser from "./load.js";
 import iniciarTemporizador from "./main.js";
 
 const btn_init = document.querySelector('.btn_init');

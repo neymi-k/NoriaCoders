@@ -1,7 +1,6 @@
 let container = document.getElementById('container');
 
-let users = ['Alicia','Marcela', 'Neymi', 'Alvaro','Jander', 'José', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'Isaac', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'Isaac', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'Isaac']
-let colors = ['#160FF2','#B856A4','#494078','#673CE1','#8D3CC0']
+let users = ['Alicia','Marcela', 'Neymi', 'Alvaro','Jander', 'José', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'José', 'Roxana', 'Joaco', 'Alfredo', 'Elena', 'José', 'Roxana', 'Joaco', 'Alfredo', 'Elena']
 
 function randomNumbers(arrObject){
   return Math.floor(Math.random() * ((arrObject.length - 1) - 0 + 1 ) + 0)
@@ -20,11 +19,18 @@ function numbers_azar(arrObject){
 export default function LoadUser() {
   container.innerHTML = ''
   let userHtml = ''
-  let color_random = numbers_azar(colors)
+  let planet = 1
   users.forEach( (user,index) =>{
-    userHtml += `<div class="element" style="background-color:${color_random[index]}" id="element${index}">
-     ${user}
-    </div>`
+    if (user.length % 3 === 0) planet = 1
+    userHtml += `<div 
+                  class="element" 
+                  id=element${index}
+                  style = "background-image:url(../img/planet${planet++}.png);  color : azure;
+                  background-size: cover;
+                  background-position: center;"
+                 >
+                  ${user}
+              </div>`
   })
   container.innerHTML = userHtml;
   
@@ -34,10 +40,18 @@ export default function LoadUser() {
     container.innerHTML = ""
     let userHtml =''
     let newUsers = numbers_azar(users)
-    let color_random = numbers_azar(colors)
-    console.log(newUsers)
+    let planet = 1
     newUsers.forEach( (user,index) =>{
-    userHtml += `<div class="element"  style="background-color:${color_random[index]}; inset:''" id="element${index}">${user}</div>`
+      userHtml += `<div 
+                    class = "element" 
+                    class="element" 
+                    id=element${index}
+                    style = "background-image:url(../img/planet${planet++}.png);  color : azure;
+                    background-size: cover;
+                    background-position: center;"
+                   >
+                    ${user}
+              </div>`
     })
     container.innerHTML = userHtml;
  }

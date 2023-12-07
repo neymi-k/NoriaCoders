@@ -1,57 +1,29 @@
-import { NewLoad } from "./load.js";
-let container = document.getElementById('container');
 let temporizador;
 
-function generarPosicionAleatoria(elemento, contenedor) {
-  // Obtener las dimensiones del contenedor y del elemento
-  let anchoContenedor = contenedor.offsetWidth;
-  let altoContenedor = contenedor.offsetHeight;
-  let anchoElemento = elemento.offsetWidth;
-  let altoElemento = elemento.offsetHeight;
- 
-  // Calcular el rango de posiciones aleatorias
-  let rangoX = anchoContenedor - anchoElemento;
-  let rangoY = altoContenedor - altoElemento;
- 
-  // Generar una posición aleatoria dentro del rango
-  let top = Math.floor(Math.random() * rangoY);
-  let left = Math.floor(Math.random() * rangoX);
-
-  console.log(rangoX, rangoY, top, left)
- 
-  return { top: top, left: left };
- }
- 
-
 function moverElemento() {
- let elementos = document.querySelectorAll('.element');
- let posicionesOcupadas = [];
+    let elementos = document.querySelectorAll('.element');
+    let gridPositions = {}; 
 
- elementos.forEach(function (elemento) {
-   let posicion = generarPosicionAleatoria(elemento, container);
-   let foundSpace = false;
 
-   while (!foundSpace) {
-     let seSuperpone = posicionesOcupadas.some(function (pos) {
-       return Math.abs(pos.top - posicion.top) < 50 && Math.abs(pos.left - posicion.left) < 50 ;
-     });
+    elementos.forEach( item => {
+        let randomColumn = Math.floor(Math.random() * 3) + 1;
+        let randomRow = Math.floor(Math.random() * 6) + 1;
 
-     if (!seSuperpone) {
-       foundSpace = true;
-       elemento.style.top = posicion.top + 'px';
-       elemento.style.left = posicion.left + 'px';
-       posicionesOcupadas.push(posicion);
-     } else {
-       posicion = generarPosicionAleatoria(elemento, container);
-     }
-   }
- });
+        // Verifica si la posición ya está ocupada
+        while (gridPositions[randomColumn + '-' + randomRow]) {
+            randomColumn = Math.floor(Math.random() * 3) + 1;
+            randomRow = Math.floor(Math.random() * 7) + 1;
+        }
+
+        // Si la posición no está ocupada, mueve el elemento y registra su posición
+        item.style.gridColumn = randomColumn;
+        item.style.gridRow = randomRow;
+        gridPositions[randomColumn + '-' + randomRow] = true;
+    });
+
 }
 
 export default function iniciarTemporizador() {
-  temporizador = setInterval(moverElemento, 150);
-  // let renew = setInterval(NewLoad, 200);
-  setTimeout(() => clearInterval(temporizador), 2000);
-  // setTimeout(() => clearInterval(renew), 2100);
+    temporizador = setInterval(moverElemento, 100);
+    setTimeout(() => clearInterval(temporizador), 2000);
 }
-
