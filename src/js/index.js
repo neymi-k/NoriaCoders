@@ -1,35 +1,27 @@
-/*ARRAY BASICO DE DONDE MANIPULAREMOS SUS ELEMENTOS*/
-var miArray = ["jander", "aLICIA", "NEYMI", "MARCE", "ALVARO"];
+import LoadUser from "./load.js";
+import iniciarTemporizador, { reloadUsers } from "./main.js";
+import { users } from "./users.js";
 
 
-// Función para mostrar los elementos del array
-function mostrarArray() {
-    var contenedor = document.getElementById("contenedorArray");
+const btn_init = document.querySelector('.btn_init');
+const btn_refresh = document.querySelector('.btn_refresh');
+const modal = document.querySelector('.modal');
+const modal_close = document.querySelector('.modal__close');
 
-    // Limpiar el contenido actual
-    contenedor.innerHTML = "";
-
-    // Generar elementos para cada elemento del array
-    miArray.forEach(function (elemento, index) {
-        var nuevoElemento = document.createElement("div");
-        nuevoElemento.className = "elemento";
-        nuevoElemento.textContent = elemento;
-
-        // Asociar manejador de clic para eliminar el elemento al hacer clic
-        nuevoElemento.onclick = function () {
-            eliminarElemento(index);
-        };
-
-        contenedor.appendChild(nuevoElemento);
-    });
-}
+window.onload = () => LoadUser(users)
 
 
-// Función para eliminar un elemento del array por su índice
-function eliminarElemento(index) {
-    miArray.splice(index, 1);
-    mostrarArray();
-}
+btn_init.addEventListener("click", (e) =>{
+  e.preventDefault()
+  iniciarTemporizador();
+});
 
-// Mostrar los elementos iniciales
-mostrarArray();
+btn_refresh.addEventListener("click", (e)=> {
+  e.preventDefault()
+  reloadUsers()
+});
+
+modal_close.addEventListener("click", (e) =>{
+  e.preventDefault()
+  modal.classList.remove('modal--show')
+});
