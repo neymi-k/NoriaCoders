@@ -57,8 +57,7 @@ export function reloadUsers(){
     LoadUser(users_no_winners);
 }
 
-export function addUser() {
-            
+export function addUser() {         
     /*Obtengo el valor del imput y limpio sus espacios con el trim()*/
     let newUser = document.getElementById("text_user").value.trim();
 
@@ -67,49 +66,78 @@ export function addUser() {
         users_no_winners.push(newUser);                         /*agrego el nuevo elmento al array con el metodo push*/
         document.getElementById("text_user").value = ""; /*Limpia el input, estableciendo su valor en una cadena vacía. */
         LoadUser(users_no_winners);
-        alert("CODER AGREGADO");
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Coder Agregado',
+            showConfirmButton: false,
+            timer: 1500
+          })
     } else {
-    alert("Debes agregar un nombre sin espacios");
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Debes agregar un nombre sin espacios',
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
-    
 }
 
-export function deleteUser(element) {
+export function deletedUser(event) {
+    // Accede al elemento que ha sido clicado
+    let userSelected = event.target;
+  
+    // Accede al id del elemento clicado
+    let userSelectedClick = userSelected.id;
 
-    // Obtener el contenido del elemento que se hizo clic
-    let userSelected = element.textContent;
-    let indexUser = users_no_winners.indexOf(userSelected);
-
-     // Verificar si el elemento está en el array
-     if (indexUser !== -1) {
-        // Eliminar el elemento del array
-        users_no_winners.splice(indexUser, 1);
-
+    //eliminio de element0..n la palabra 'element'
+    userSelectedClick = userSelectedClick.slice(7, userSelectedClick.lenght)
+  
+    if (userSelectedClick === "container") return
+  
+    // Verificar si el elemento está en el array
+    if (userSelectedClick >= 0) {
+        
         // Eliminar el elemento del DOM
         userSelected.remove();
-        LoadUser(users_no_winners);
-        console.log("Elemento eliminado:", userSelected);
-        console.log("miArray actualizado:", users_no_winners);
+
+        // Eliminar el elemento del array
+        users_no_winners = users_no_winners.filter(user => user!== (userSelected.textContent).trim()); 
     }
-}
+  }
 
 export default function iniciarTemporizador() {
-
-    if(users_no_winners.length === 0)return
+    if(users_no_winners.length === 0){
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Debes agregar usuarios al juego',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        return
+    }
+    else if(users_no_winners.length === 1) {
+        Swal.fire({
+            position: 'center',
+            icon: 'info',
+            title: 'Último usuario en el juego',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
 
     timerElement = setInterval(moveElement, 100);
+
     setTimeout(() => {
         clearInterval(timerElement)
         let number_win = getRandomInt(0, users_no_winners.length - 1)
-
         winner.textContent = users_no_winners[number_win]
-        
-        // console.log(users_no_winners)
-        // console.log(users_no_winners[number_win]);
         users_no_winners = goWin(users_no_winners[number_win])
         LoadUser(users_no_winners);
-    }, 2000);
+        
+    }, 4000);
 
-    setTimeout(() => modal.classList.add('modal--show'), 2200);
-
+    setTimeout(() => modal.classList.add('modal--show'), 4200);
 }

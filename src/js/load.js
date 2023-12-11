@@ -20,17 +20,15 @@ export default function LoadUser(users) {
   let planet = 1
   let newUsers = numbers_azar(users)
   newUsers.forEach((user, index) => {
-    if (index % 5 === 0) planet = 1
+    if (index % 6 === 0) planet = 1
     userHtml += `<div 
                   class="element" 
                   id=element${index}
                   style = "background-image:url(../img/planet${planet++}.png);  color : azure;
                   background-size: cover;
                   background-position: center;"
-                 >
-                  ${user}
-              </div>`
+                 > ${user}
+                </div>`
   })
   container.innerHTML = userHtml;
-
 }

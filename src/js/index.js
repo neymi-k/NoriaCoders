@@ -1,5 +1,5 @@
 import LoadUser from "./load.js";
-import iniciarTemporizador, { addUser, reloadUsers } from "./main.js";
+import iniciarTemporizador, { addUser, deletedUser, reloadUsers } from "./main.js";
 import { users } from "./users.js";
 
 
@@ -9,34 +9,28 @@ const modal = document.querySelector('.modal');
 const modal_close = document.querySelector('.modal__close');
 const btn_add = document.querySelector('.btn_add');
 
-// const contain = document.getElementById('container');
-// const userSelected = document.querySelector('.element');
-
 window.onload = () => LoadUser(users)
 
-// console.log(userSelected.id)
-
-btn_init.addEventListener("click", (e) =>{
+btn_init.addEventListener("click", (e) => {
   e.preventDefault()
   iniciarTemporizador();
 });
 
-btn_add.addEventListener("click", (e)=> {
+btn_add.addEventListener("click", (e) => {
   e.preventDefault()
   addUser()
 });
 
-btn_refresh.addEventListener("click", (e)=> {
+btn_refresh.addEventListener("click", (e) => {
   e.preventDefault()
   reloadUsers()
 });
 
-modal_close.addEventListener("click", (e) =>{
+modal_close.addEventListener("click", (e) => {
   e.preventDefault()
   modal.classList.remove('modal--show')
 });
 
-// userSelected.addEventListener("click", (e) =>{
-//   e.preventDefault()
-//   console.log(userSelected.id)
-// })
+// Añade un controlador de eventos click al contenedor
+let contenedor = document.getElementById("container");
+contenedor.addEventListener("click", deletedUser);
