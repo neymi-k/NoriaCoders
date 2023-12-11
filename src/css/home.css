@@ -1,63 +1,49 @@
 :root{
     --font-family: 'Jolly Lodger', cursive;
-    --main-color: #F0F08F;
 }
 body{
     width: 100%;
     background-image: url(../images/fondo.png);
     font-family: var(--font-family);
-    color: var(--main-color);
+    color: #F0F08F;
     margin: 0;
 }
 
-h2{
+h1{
     text-align: center;
-    font-size: 66px;
+    font-size: 56px;
     font-weight: 600;
-    letter-spacing: 7.3px;  
+    letter-spacing: 5.3px;  
 }
- 
-.section-1{
-    font-size: 30px;
-    text-align: center;
 
- 
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+
+}
+.text-introduction{
+    font-size: 35px;
+    text-align: center;
+    
+
 }
 p{
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.section-2{
-    text-align: center;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-}
-label{
-    font-size: 22px;
-}
-#user{
-    /*width: 6em; quito esto ypongo los dos de abaja*/
-    width: 100%;
-    max-width: 200px;
-    height:1.5em;
-    border-radius:1em;
-    font-size: 22px;
-    background-color:#F0F08F;
-    font-family:inherit;
-    text-align: center;
-    color: #001F3F;
-    margin: 0 auto;
-}
 
-#btn-start{
+#startButton{
     width: 100%;
     max-width: 200px;
-    height: 1.5em;
-    margin-top: 15px;
+    height: 2em;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 90px;
     border-radius: 1em;
-    font-size: 22px;
+    font-size: 30px;
     font-family: inherit;
     border: none;
     position: relative;
@@ -67,9 +53,10 @@ label{
                 -6px -6px 12px #ffffff;
     cursor:pointer;
     color: #01162c;
-   }
-   
-#btn-start::before {
+
+}
+
+#startButton::before {
     content: '';
     width: 0;
     height: 3em;
@@ -82,6 +69,21 @@ label{
     z-index: -1;
    }
    
-#btn-start:hover::before {
+#startButton:hover::before {
     width: 100%;
+   }
+
+   @media only screen and (min-width: 400px) {
+    h1{
+    
+        font-size: 60px;
+        font-weight: 600;
+        letter-spacing: 7.3px;  
+    }
+    .text-introduction{
+        font-size: 40px;
+     
+        
+    
+    }
    }
