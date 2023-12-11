@@ -1,0 +1,168 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  place-content: center;
+  padding-block: 2rem;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #050505;
+}
+
+body {
+  margin: 0;
+  box-sizing:border-box;
+  user-select: none;
+} 
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+  place-items: center;
+}
+
+
+.element {
+  width: 3rem;
+  height: 2rem;
+  margin: 0.3rem;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 1rem;
+  color: azure;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn_init,.btn_refresh, .btn_add {
+  align-content: center;
+  align-items: center;
+  padding: 1.1rem;
+  color: azure;
+  background-color: #672494;
+  border-radius: 1.5rem;
+}
+
+.modal{
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s;
+}
+
+.modal__winner{
+  background-image:url(../img/bg-win.jpg);
+  text-align: center;
+  border-radius: 2rem;
+  max-width: 300px;
+  color: #F0F08F  ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  font-family: 'Jolly Lodger';
+  width: 100%;
+}
+
+.modal__title{
+  font-size: 60px;
+  padding: 0.2em;
+  margin: 0;
+}
+
+.modal__win{
+  font-size: 50px;
+  padding: 0.2em;
+  margin: 0;
+}
+
+.modal__paragraph{
+  font-size: 28px;
+  padding: 0.2em;
+  margin: 0;
+}
+
+.modal__card {
+  position: relative;
+  cursor: pointer; 
+  width: 15em;
+  height: 15em;
+}
+
+.modal__close{
+  text-decoration: none;
+  color: #F0F08F;
+  background-color: #672494;
+  padding: .5em 2em;
+  margin-top: 1em;
+  border: 1px solid ;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color 0.3s;
+}
+
+.modal__close:hover{
+  background: #9b1af2;
+}
+
+.modal__card::before,
+.modal__card::after {
+  position: absolute;
+  content: "";
+  width: 90%;
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.5rem;
+  transform: perspective(15rem) rotateX(var(--rotate, 0deg)) scale(var(--scale, 1));
+  transform-origin: bottom;
+  transition: .5s ease-in-out;
+}
+
+.modal__card::before {
+  background-image: url('../img/cup.png');
+  left: 0.5em;
+}
+
+.modal__card::after {
+  background-image: url('../img/cup2.png');
+  left: 0.5em;
+}
+
+.modal__card:hover::before,
+.modal__card:hover::after {
+  --scale: 1.2;
+}
+
+.modal__card:hover::before {
+  --rotate: 65deg;
+  filter: blur(.5px);
+}
+
+.modal--show{
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.6s;
+}

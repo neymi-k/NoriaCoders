@@ -1,10 +1,91 @@
 header {
-    background-color: #160FF2 ;
-    text-align: left;
-    padding-left: 5%;
-    width: 125%;
-    height: 8%;
-    position: fixed;
-    top:0;
-    left: 0%;
+  background-color: #160FF2 ;
+  text-align: left;
+  padding-left: 5%;
+  width: 125%;
+  height: 8%;
+  position: fixed;
+  top:0;
+  left: 0%;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: 240px;
+  margin-top: 30px;
+  height: 410px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+#elemento1, #elemento6, #elemento11, #elemento16, #elemento21 {
+  background-image: url(../img/planet1.png);
+  color: azure;
+  background-size: cover;
+  background-position: center;
+}
+#elemento2, #elemento7, #elemento12, #elemento17, #elemento22 {
+  background-image: url(/img/planet2.png);
+  color: azure;
+  background-size: cover;
+  background-position: center;
+}
+#elemento3, #elemento8, #elemento13, #elemento18, #elemento23 {
+  background-image: url(/img/planet3.png);
+  color: azure;
+  background-size: cover;
+  background-position: center;
+}
+#elemento4, #elemento9, #elemento14, #elemento19, #elemento24 {
+  background-image: url(/img/planet4.png);
+  color: azure;
+  background-size: cover;
+  background-position: center;
+}
+#elemento5, #elemento10, #elemento15, #elemento20, #elemento25 {
+  background-image: url(/img/planet5.png);
+  color: azure;
+  background-size: cover;
+  background-position: center;
+}
+
+.elemento {
+  width: 2rem;
+  height: 1.5rem;
+  margin: 0.3rem;
+  border-radius: 180%;
+  font-size:10px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+#elemento1 { top: 5px; left: 20px; }
+#elemento2 { top: 10px; left: 50px; }
+#elemento3 { top: 15px; left: 20px; }
+#elemento4 { top: 60px; left: 50px; }
+#elemento5 { top: 50px; left: 25px; }
+#elemento6 { top: 3px; left: 60px; }
+#elemento7 { top: 10px; left: 50px; }
+#elemento8 { top: 50px; left: 25px;  }
+#elemento9 { top: 25px; left: 30px;  }
+#elemento10 { top: 20px; left:10px; }
+#elemento11 { top: 30px; ;left: 25px;}
+#elemento12 { top: 40px; left:40px;}
+#elemento13 { top: 50px; left:60px;}
+#elemento14 { top: 60px; left:80px; }
+#elemento15 { top: 70px; left: 20px;}
+#elemento16 { top: 20px; left:10px; }
+#elemento17 { top: 30px; left: 25px;}
+#elemento18 { top: 20px; left:40px;}
+#elemento19 { top: 20px; left:60px;}
+#elemento20 { top: 25px; left:40px; }
+#elemento21 { top: 10px; left: 10px;}
+#elemento22 { top: 10px; left:10px; }
+#elemento23 { top: 20px; left: 25px;}
+#elemento24 { top: 30px; left:40px;}
+#elemento25 { top: 20px; left:50px;}
