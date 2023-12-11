@@ -11,15 +11,29 @@
       href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Merriweather:ital,wght@0,400;0,900;1,700;1,900&family=Roboto:ital,wght@0,100;0,700;1,100&display=swap"
       rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <title>Noria Coders</title>
+    <title>Noria Cod
+      ers</title>
   </head>
   <body>
     <div id="particles-js"></div>
     <header>
-      <button class="btn_init">JUGAR</button>
+      <button class="btn_init">JUGAR </button>
+      <audio id="playto">
+        <source src="../sounds/balls.wav" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
       <button class="btn_refresh">REINICIAR</button>
+      <audio id="restartgame">
+        <source src="../sounds/restart.wav" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
       <input type="text" class="text_user" id="text_user"></input>
       <button class="btn_add">AGREGAR</button>
+      <audio id="addgamer">
+        <source src="../sounds/addgamer.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
     </header>
     <section>
       <article class="container" id="container"></article>
@@ -27,7 +41,14 @@
     <section class="modal" id="modal">
       <article class="modal__winner" id="modal__winner">
         <h2 class="modal__title">NoriaCoders</h2>
-        <div class="modal__card"></div>
+        <div class="modal__card" id="modal__cards">
+          <audio id="winner_sound">
+            <source src="../sounds/winner.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+
+        </div>
         <h3 class="modal__win" id="modal__win">Winner</h3>
         <p class="modal__paragraph">¡Enhorabuena!<br>¡Eres el próximo CodeMaster!</p>
         <a href="#" class="modal__close">Volver a jugar</a>

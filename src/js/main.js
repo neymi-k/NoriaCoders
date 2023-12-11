@@ -108,8 +108,8 @@ export default function iniciarTemporizador() {
         // console.log(users_no_winners[number_win]);
         users_no_winners = goWin(users_no_winners[number_win])
         LoadUser(users_no_winners);
-    }, 2000);
+    }, 4000);
 
-    setTimeout(() => modal.classList.add('modal--show'), 2200);
+    setTimeout(() => modal.classList.add('modal--show'), 4200);
 
 }

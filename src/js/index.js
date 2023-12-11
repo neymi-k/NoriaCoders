@@ -16,18 +16,42 @@ window.onload = () => LoadUser(users)
 
 // console.log(userSelected.id)
 
+let playto = document.getElementById('playto');
+
+
+function playStart() {
+  playto.play();
+}
+
+
 btn_init.addEventListener("click", (e) =>{
   e.preventDefault()
+  playStart()
   iniciarTemporizador();
 });
+
+let addgamer = document.getElementById('addgamer');
+
+
+function AddGamer() {
+  addgamer.play();
+}
 
 btn_add.addEventListener("click", (e)=> {
   e.preventDefault()
   addUser()
+  AddGamer();
 });
+
+let restartgames = document.getElementById('restartgame');
+
+function restartGame(){
+  restartgames.play();
+}
 
 btn_refresh.addEventListener("click", (e)=> {
   e.preventDefault()
+  restartGame()
   reloadUsers()
 });
 
@@ -40,3 +64,17 @@ modal_close.addEventListener("click", (e) =>{
 //   e.preventDefault()
 //   console.log(userSelected.id)
 // })
+
+let winner_sound = document.getElementById('winner_sound');
+
+function winnerGame(){
+  winner_sound.play();
+}
+
+let modal_card = document.getElementById('modal__cards');
+modal_card.addEventListener('mouseover',function(){
+  console.log('hola');
+   winnerGame()
+  } )
+
+
