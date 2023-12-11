@@ -23,9 +23,9 @@
             if (nuevoElemento !== "") {
             miArray.push(nuevoElemento);                         /*agrego el nuevo elmento al array con el metodo push*/
             document.getElementById("nuevo-elemento").value = ""; /*Limpia el input, estableciendo su valor en una cadena vacía. */
-            alert("CODER AGREGADO");
+            Swal.fire("CODER AGREGADO");
             } else {
-            alert("Debes agregar un nombre sin espacios");
+                Swal.fire("Debes agregar un nombre sin espacios");
             }
             
     }
@@ -60,51 +60,7 @@
     /******************************************************** */
 
 
-    /**FUNCION SENCILLA PARA SELECCIONAR EL ELEMENTO DEL ARRAY */
-    /******************************************************** */
-    /******************************************************** */
-    function seleccionarElemento() {
-
-        let indiceAleatorio  = Math.floor(Math.random() * miArray.length); //LISTO los escojo
-
-        elementosSelecanterior.push(indiceAleatorio);                      //guado el indice en global              
-        let elementoSeleccionado = miArray[indiceAleatorio];               //al guardo indice seleccionado
-
-        if ( miArray.length === 2) { alert("Cuidado, queda un solo Coder....");}
-        if ( miArray.length === 1) { alert("El ultimo coder es....");}
-        if ( miArray.length === 0) {   
-            alert("Todos han sido Selecionados");
-            return;
-        }
-
-        alert( elementoSeleccionado + " Ha sido Seleccionado");
-
-        //construyo cajita de indice creado
-        let crearCajita2 = document.createElement("div"); /*creo variable para guardar div creado */
-        crearCajita2.className   = "elemento2";           /*a ese elemento creado le doy un nombre */
-        crearCajita2.textContent = elementoSeleccionado;  /*ademas, le doy el contenido del array */
-        let contenedordeCajitaAleatoria2 = document.getElementById("contenedor-array-aleatorio2"); /*guardo en una variable la referencia del objeto */
-        contenedordeCajitaAleatoria2.appendChild(crearCajita2); /* */
-
-        /*DEebo usar este addevent listener justo despues d crear el elemento para que no cree conflicto */
-        crearCajita2.addEventListener("click", function() {
-            // Elimino ls cajita directamente
-            crearCajita2.remove();
-        }); 
-
-        let elementoEliminado = miArray.splice(indiceAleatorio, 1);       //elimino el indice seleccionado del array principal
-
-        console.log(miArray);                //cnsola para monitorear
-        console.log(elementosSelecanterior); //cnsola para monitorear
-
-        mostrarArray();                                                   //llamo a la funcion para que mustre el aray principal
-
-    }
-    /******************************************************** */
-    /******************************************************** */
-
-
-    /**FUNCION ELIMINAR EL ELEMENTOS DEL ARRAY PRINCIPAL*/
+   /**FUNCION ELIMINAR EL ELEMENTOS DEL ARRAY PRINCIPAL*/
     /******************************************************** */
     /******************************************************** */
     function EliminarElementosdelArrayPrincipal(elemento) {
@@ -127,6 +83,62 @@
     }
     /******************************************************** */
     /******************************************************** */
+
+  
+
+    /**FUNCION SENCILLA PARA SELECCIONAR EL ELEMENTO DEL ARRAY */
+    /******************************************************** */
+    /******************************************************** */
+    function seleccionarElemento() {
+
+        let indiceAleatorio  = Math.floor(Math.random() * miArray.length); //LISTO los escojo
+
+        elementosSelecanterior.push(indiceAleatorio);                      //guado el indice en global              
+        let elementoSeleccionado = miArray[indiceAleatorio];               //al guardo indice seleccionado
+
+
+        if ( miArray.length === 2) { Swal.fire('Cuidado, queda un Coder');}
+        if ( miArray.length === 1) { Swal.fire("El ultimo coder");}
+        if ( miArray.length === 0) {   
+          Swal.fire("Todos han sido Seleccionados");
+            return;
+        }
+
+        //set timer pal efecto
+        
+        setTimeout(function() {   //************************************************TIMER
+          
+
+          Swal.fire( elementoSeleccionado + " Ha sido Seleccionado");
+        
+            //construyo cajita de indice creado
+            let crearCajita2 = document.createElement("div"); /*creo variable para guardar div creado */
+            crearCajita2.className   = "elemento2";           /*a ese elemento creado le doy un nombre */
+
+            crearCajita2.textContent = elementoSeleccionado;  /*ademas, le doy el contenido del array */
+            let contenedordeCajitaAleatoria2 = document.getElementById("contenedor-array-aleatorio2"); /*guardo en una variable la referencia del objeto */
+            contenedordeCajitaAleatoria2.appendChild(crearCajita2); /* */
+
+            /*DEebo usar este addevent listener justo despues d crear el elemento para que no cree conflicto */
+            crearCajita2.addEventListener("click", function() {
+                // Elimino ls cajita directamente
+                crearCajita2.remove();
+            }); 
+
+            let elementoEliminado = miArray.splice(indiceAleatorio, 1);       //elimino el indice seleccionado del array principal
+
+            console.log(miArray);                //cnsola para monitorear
+            console.log(elementosSelecanterior); //cnsola para monitorear
+
+            mostrarArray();                                                   //llamo a la funcion para que mustre el aray principal
+
+            
+        }, 850);                  //************************************************TIMER
+        
+    }
+    /******************************************************** */
+    /******************************************************** */
+
 
     // Mostrar los elementos iniciales
     mostrarArray();
