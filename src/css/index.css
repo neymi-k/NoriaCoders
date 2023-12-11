@@ -1,0 +1,92 @@
+:root{
+  --font-family: 'Jolly Lodger', cursive;
+}
+body{
+  width: 100%;
+  background-image: url(../img/fondo.png);
+  font-family: var(--font-family);
+  color: #F0F08F;
+  margin: 0;
+}
+
+h1{
+  text-align: center;
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: 5.3px;  
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+
+}
+.text-introduction{
+  font-size: 35px;
+  text-align: center;
+}
+
+p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#startButton{
+  width: 100%;
+  max-width: 200px;
+  height: 2em;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 90px;
+  border-radius: 1em;
+  font-size: 35px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+  cursor:pointer;
+ 
+  
+}
+#startButton a{
+  text-decoration: none;
+  color: #01162c;
+}
+
+#startButton::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0f3a67 0%,#9e5fde 70%, #FFD700 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+#startButton:hover::before {
+  width: 100%;
+ }
+
+ @media only screen and (min-width: 400px) {
+  h1{
+  
+      font-size: 80px;
+      font-weight: 600;
+      letter-spacing: 9.3px;  
+  }
+  .text-introduction{
+      font-size: 50px;
+   
+      
+  
+  }
+ }

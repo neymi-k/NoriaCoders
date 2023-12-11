@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="NoriaCoders">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&family=Open+Sans&display=swap"
+    rel="stylesheet">
+  <title>NoriaCoders</title>
 </head>
+
 <body>
-    <h1>Hola Coders</h1>
+  <main>
+    <h1>NORIACODERS</h1>
+    <section>
+      <article class="text-introduction">
+        <p>Atrévete a participar en la noria de Factoria F5<br>¡Que la fuerza del código esté contigo!</p>
+      </article>
+      <div>
+        <audio id="startbtn">
+          <source src="../sounds/start.mp3" type="audio/mp3">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <script>
+          let startbtn = document.getElementById('startbtn');
+          function playAudio() {
+            startbtn.play();
+          }
+        </script>
+
+        <button id="startButton" onclick="playAudio()">
+          <a href="../pages/main.html">Comenzar</a>
+        </button>
+      </div>
+    </section>
+  </main>
+
 </body>
+
 </html>
