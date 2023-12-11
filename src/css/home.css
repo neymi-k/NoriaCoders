@@ -52,8 +52,12 @@ p{
     box-shadow: 6px 6px 12px #c5c5c5,
                 -6px -6px 12px #ffffff;
     cursor:pointer;
+   
+    
+}
+#startButton a{
+    text-decoration: none;
     color: #01162c;
-
 }
 
 #startButton::before {
