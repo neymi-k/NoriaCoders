@@ -31,7 +31,6 @@ body {
   place-items: center;
 }
 
-
 .element {
   width: 3rem;
   height: 2rem;
@@ -46,13 +45,34 @@ body {
   cursor: pointer;
 }
 
+.text_user{
+  border-radius: 1.5rem;
+  height: 38px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0;
+}
+
 .btn_init,.btn_refresh, .btn_add {
   align-content: center;
   align-items: center;
-  padding: 1.1rem;
+  padding: 0.5rem;
   color: azure;
   background-color: #672494;
   border-radius: 1.5rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.btn_add:hover {
+  background-color: #9c33e3;
+}
+.btn_refresh:hover {
+  background-color: #9c33e3;
+}
+.btn_init:hover {
+  background-color: #9c33e3;
 }
 
 .modal{
