@@ -1,56 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/index.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Merriweather:ital,wght@0,400;0,900;1,700;1,900&family=Roboto:ital,wght@0,100;0,700;1,100&display=swap" rel="stylesheet">
-
+  <meta name="description" content="NoriaCoders">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&family=Open+Sans&display=swap"
+    rel="stylesheet">
   <title>NoriaCoders</title>
 </head>
 
 <body>
-  <header>NC</header>
-  <section>
-    <article class="container">
-        
-      <div class="elemento" id="elemento1">Alicia</div>
-      <div class="elemento" id="elemento2">Jander</div>
-      <div class="elemento" id="elemento3">Marcela</div>
-      <div class="elemento" id="elemento4">Neymi</div>
-      <div class="elemento" id="elemento5">Álvaro</div>
-      <div class="elemento" id="elemento6">Joaco</div>
-      <div class="elemento" id="elemento7">Alfredo</div>
-      <div class="elemento" id="elemento8">Elena</div>
-      <div class="elemento" id="elemento9">Isaac</div>
-      <div class="elemento" id="elemento10">Laudy</div>
-      <div class="elemento" id="elemento11">Yessi</div>
-      <div class="elemento" id="elemento12">Yady</div>
-      <div class="elemento" id="elemento13">Victor</div>
-      <div class="elemento" id="elemento14">Maxwell</div>
-      <div class="elemento" id="elemento15">Alba</div>
-      <div class="elemento" id="elemento16">Raúl</div>
-      <div class="elemento" id="elemento17">David</div>
-      <div class="elemento" id="elemento18">Paolo</div>
-      <div class="elemento" id="elemento19">Hannah</div>
-      <div class="elemento" id="elemento20">Jose</div>
-      <div class="elemento" id="elemento21">Roxana</div>
-      <div class="elemento" id="elemento22">VictorF</div>
-      <div class="elemento" id="elemento23">Sergio</div>
-      <div class="elemento" id="elemento24">Jennifer</div>
-      <div class="elemento" id="elemento25">Alece</div>
-      
-  
-    </article>
-  </section>
+  <main>
+    <h1>NORIACODERS</h1>
+    <section>
+      <article class="text-introduction">
+        <p>Atrévete a participar en la noria de Factoria F5<br>¡Que la fuerza del código esté contigo!</p>
+      </article>
+      <div>
+        <audio id="startbtn">
+          <source src="../sounds/start.mp3" type="audio/mp3">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
 
-  <!--<button onclick="mezclarElementos()">Mezclar Elementos</button>-->
-  <button onclick="iniciarTemporizador()">Iniciar Temporizador</button>
-  <!--<button onclick="detenerTemporizador()">Detener Temporizador</button>-->
+        <script>
+          let startbtn = document.getElementById('startbtn');
+          function playAudio() {
+            startbtn.play();
+          }
+        </script>
 
-  <script src="/js/index.js"></script>
+        <button id="startButton" onclick="playAudio()">
+          <a href="../pages/main.html">Comenzar</a>
+        </button>
+      </div>
+    </section>
+  </main>
+
 </body>
+
 </html>

@@ -17,9 +17,18 @@
     <div id="particles-js"></div>
     <header>
       <button class="btn_init">JUGAR</button>
+      <audio id="playto">
+        <source src="../sounds/balls.wav" type="audio/mp3">
+      </audio>
       <button class="btn_refresh">REINICIAR</button>
+      <audio id="restartgame">
+        <source src="../sounds/restart.wav" type="audio/mp3">
+      </audio>
       <input type="text" class="text_user" id="text_user"></input>
       <button class="btn_add">AGREGAR</button>
+      <audio id="addgamer">
+        <source src="../sounds/addgamer.mp3" type="audio/mp3">
+      </audio>
     </header>
     <section>
       <article class="container" id="container"></article>
@@ -27,7 +36,11 @@
     <section class="modal" id="modal">
       <article class="modal__winner" id="modal__winner">
         <h2 class="modal__title">NoriaCoders</h2>
-        <div class="modal__card"></div>
+        <div class="modal__card" id="modal__card">
+          <audio id="winner_sound">
+            <source src="../sounds/winner.mp3" type="audio/mp3">
+          </audio>
+        </div>
         <h3 class="modal__win" id="modal__win">Winner</h3>
         <p class="modal__paragraph">¡Enhorabuena!<br>¡Eres el próximo CodeMaster!</p>
         <a href="#" class="modal__close">Volver a jugar</a>
