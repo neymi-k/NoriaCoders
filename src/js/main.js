@@ -110,6 +110,14 @@ export function deletedUser(event) {
             timer: 1500
           })
 
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Jugador eliminado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
         // Eliminar el elemento del array
         users_no_winners = users_no_winners.filter(user => user!== (userSelected.textContent).trim()); 
     }
