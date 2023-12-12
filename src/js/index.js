@@ -1,5 +1,5 @@
 import LoadUser from "./load.js";
-import iniciarTemporizador, { addUser, deletedUser, reloadUsers } from "./main.js";
+import startGame, { addUser, deletedUser, reloadUsers } from "./main.js";
 import { users } from "./users.js";
 
 
@@ -19,7 +19,7 @@ function playStart() {
 btn_init.addEventListener("click", (e) => {
   e.preventDefault()
   playStart()
-  iniciarTemporizador();
+  startGame();
 });
 
 let addgamer = document.getElementById('addgamer');

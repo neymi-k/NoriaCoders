@@ -101,13 +101,21 @@ export function deletedUser(event) {
         
         // Eliminar el elemento del DOM
         userSelected.remove();
+        
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Jugador eliminado',
+            showConfirmButton: false,
+            timer: 1500
+          })
 
         // Eliminar el elemento del array
         users_no_winners = users_no_winners.filter(user => user!== (userSelected.textContent).trim()); 
     }
   }
 
-export default function iniciarTemporizador() {
+export default function startGame() {
     if(users_no_winners.length === 0){
         Swal.fire({
             position: 'center',
