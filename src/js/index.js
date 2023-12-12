@@ -19,7 +19,7 @@ function playStart() {
 btn_init.addEventListener("click", (e) => {
   e.preventDefault()
   playStart()
-  iniciarTemporizador();
+  startGame();
 });
 
 let addgamer = document.getElementById('addgamer');
